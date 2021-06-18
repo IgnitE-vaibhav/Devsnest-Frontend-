@@ -1,0 +1,101 @@
+body{
+    background-color: blanchedalmond;
+    height: 95vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock
+{
+    height: 400px;
+    width: 400px;
+    border-radius: 25%;
+    border: 40px solid;
+    border-color: red;
+    position:relative;
+    box-shadow: 50px 10px 50px;
+    padding: 20px;
+    background-color:rgba(239, 246, 248, 0.863);
+    animation : example 6s linear infinite;
+    
+}
+.min
+{
+    border-radius: 0% 50% 50% 0%;
+    background-color: rgb(201, 29, 29);
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    top: 49%;
+    left: 50%;  
+    transform-origin: left;
+    padding: 3px;
+    
+    animation: sec 3600s  linear infinite;   
+}
+.hour
+{
+    border-radius: 0% 50% 50% 0%;
+    background-color: blue;
+    position:absolute;
+    width: 90px;
+    height: 2px;
+    top: 49%;
+    left: 50%;  
+    transform-origin: left;
+    padding: 3px;
+    animation: min 216000s linear infinite;   
+}
+.sec
+{
+    border-radius: 0% 50% 50% 0%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    width: 145px;
+    height: 2px;
+    top: 50%;
+    left: 50%;  
+    transform-origin: left;
+    transform: translateY(50%);
+
+    animation: sec 60s steps(60,end) infinite;   
+}
+.dot
+{
+    border-radius: 50%;
+    background-color: black;
+    width: 4%;
+    height: 4%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+} 
+
+@keyframes sec{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+@keyframes min {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes hour{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+
+@keyframes example{
+    0%   {border-color: red;}
+  25%  {border-color: yellow;}
+  50%  {border-color: blue;}
+  100% {border-color: green;}
+  }
